@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.mm.sb.demo.models.Student;
@@ -38,7 +39,7 @@ public class StudentsController {
 	
 	
 	@GetMapping(path="/{rollno}")
-	public StudentsResponse getStudentByRollNo(@PathVariable Long rollno){	
+	public StudentsResponse getStudentByRollNo(@PathVariable("rollno") Long rollno){	
 		System.out.println("StudentsController : getStudentByRollNo : " + rollno);
 		return studentService.getStudentByRollNo(rollno);
 	}
@@ -54,5 +55,10 @@ public class StudentsController {
 		return studentService.updateStudent(student);
 	}
 	
+	//localhost:8090/school/students/find?name=pavan
+	@GetMapping("find/byname")
+	public StudentsResponse findByName(@RequestParam("name") String studentname) {
+		return studentService.findByName(studentname);
+	}
 	
 }

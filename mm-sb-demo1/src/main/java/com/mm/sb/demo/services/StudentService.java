@@ -76,4 +76,29 @@ public class StudentService {
 		return sr;
 	}
 
+	public StudentsResponse findByName(String name) {
+		Student st = null;
+		StudentsResponse sr = new StudentsResponse();
+		System.out.println("StudentService : findByName : " + name);
+		for(Student student : studentDAO.findAll()) {
+			System.out.println("StudentService : inside for : " + name);
+			if(student.getName().equals(name)) {
+				System.out.println("StudentService : inside if - found matching student record for name - " + name);
+				st = student;
+				break;
+			}
+		}			
+		if(st == null) {
+			sr.setStatus(404);
+			sr.setMessage("No student found with name " + name);
+		} else {
+			sr.setStatus(200);
+			sr.setMessage("Student found with name " + name);
+			sr.setStudent(st);
+		}
+		return sr;
+	}
+
+
+
 }
