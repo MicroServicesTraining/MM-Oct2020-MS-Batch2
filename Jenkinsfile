@@ -5,8 +5,7 @@ pipeline {
 				steps {
 					echo 'Started build stage...';
           				bat 'cd mm-sb-demo';
-					bat 'set path="%system%G:/software/apache-maven-3.6.3/bin";';
-          				bat 'mvn clean package';
+					bat 'mvn -f mm-sb-demo/pom.xml clean package';
 				}
 			}
 		}
