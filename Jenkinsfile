@@ -4,9 +4,9 @@ pipeline {
 			stage('build'){
 				steps {
 					echo 'Started build stage...';
-          				sh 'cd mm-sb-demo';
-          				sh 'set path=.;%SystemRoot%/system32;G:/software/apache-maven-3.6.3/bin';
-          				sh 'mvn clean package';
+          				bat 'cd mm-sb-demo';
+          				bat 'set path=.;%SystemRoot%/system32;G:/software/apache-maven-3.6.3/bin';
+          				bat 'mvn clean package';
 				}
 			}
 		}
