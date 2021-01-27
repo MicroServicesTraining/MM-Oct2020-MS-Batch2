@@ -43,8 +43,8 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-			<finalName>demo</finalName>
 		</plugins>
+		<finalName>demo</finalName>
 	</build>
 
 </project>
