@@ -30,7 +30,7 @@ pipeline {
 			stage ('deployment') {
 				steps {
 					echo 'Deployment stage started...';
-					bat 'copy mm-sb-demo\target\demo.war g:\shekar\javasws\apache-tomcat-9.0.13\webapps';
+					bat 'copy mm-sb-demo/target/demo.war g:/shekar/javasws/apache-tomcat-9.0.13/webapps';
 					echo 'Deployment completed successfull...';
 				}
 			}
