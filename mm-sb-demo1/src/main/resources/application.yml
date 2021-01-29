@@ -1,0 +1,11 @@
+server:
+  port: 9090
+  servlet:
+    context-path: /school
+logging:
+  file:
+    path: D:/mm-app
+  level:
+    root: info
+    org.springframework.boot: ERROR
+    com.mm.sb.demo: DEBUG
