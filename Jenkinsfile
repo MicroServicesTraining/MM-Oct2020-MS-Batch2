@@ -30,7 +30,8 @@ pipeline {
 			stage ('deployment') {
 				steps {
 					echo 'Deployment stage started...';
-					echo 'Deployment completed successfull...';
+					echo 'Deployment completed successfully...';
+					echo 'Virat Pipeline Demo completed...';
 				}
 			}
 		}
