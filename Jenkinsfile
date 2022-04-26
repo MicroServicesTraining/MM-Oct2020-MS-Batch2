@@ -4,8 +4,8 @@ pipeline {
 			stage ('build'){
 				steps {
 					echo 'Started build stage...';
-          				bat 'cd mm-sb-demo';
-					bat 'mvn -f mm-sb-demo/pom.xml clean package';
+          				bat 'cd banking-service';
+					bat 'mvn -f banking-service/pom.xml clean package';
 					echo 'Maven build is completed successfully...';
 				}
 			}
@@ -30,8 +30,8 @@ pipeline {
 			stage ('deployment') {
 				steps {
 					echo 'Deployment stage started...';
+					bat 'copy banking-service\target\*.war G:\shekar\javasws\apache-tomcat-9.0.13\webapps'
 					echo 'Deployment completed successfully...';
-					echo 'Virat Pipeline Demo completed...';
 				}
 			}
 		}
