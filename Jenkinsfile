@@ -30,8 +30,7 @@ pipeline {
 			stage ('deployment') {
 				steps {
 					echo 'Deployment stage started...';
-					bat 'cd banking-service'
-					bat 'cd target'
+					bat 'cd banking-service/target'
 					bat 'copy "./banking-service-0.0.1-SNAPSHOT.war" "G:/shekar/javasws/apache-tomcat-9.0.13/webapps/banking-service.war"'
 					echo 'Deployment completed successfully...';
 				}
